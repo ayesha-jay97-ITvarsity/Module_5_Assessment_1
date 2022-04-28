@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Solar System | Mars </title>
+        <link rel = "stylesheet" href = "style-pages.css">
+    </head>
+
+    <body>
+        <div id = "main">
+
+            <div id = "content">
+                
+                <h1> Mars </h1>                                  
+
+                <p class = "intro">                                                         <!-- we give the first paragraph a class name cos we'll be styling this paragr separately from the others (coulda also just used inline css)-->
+                    Mars is the fourth planet from the Sun.
+                </p>             
+
+                <p>
+                    Named after the Roman god of war, and often described as the "Red Planet" 
+                    due to its reddish appearance. Mars is a terrestrial planet with a thin 
+                    atmosphere composed primarily of carbon dioxide.
+                </p>
+
+                <h3> Mars Facts </h3>
+
+                <ul>
+                    <li> Equatorial Diameter: 6,792 km </li>
+                    <li> Polar Diameter: 6,752 km </li>
+                    <li> Mass: 6.39 x 10^23 kg (0.11 Earths) </li>
+                    <li> Moons: 2 (Phobos & Deimos) </li>
+                    <li> Orbit Distance: 227,943,824 km (1.38 AU) </li>
+                    <li> Orbit Period: 687 days (1.9 years) </li>
+                    <li> Surface Temperature: -87&deg; to -5&deg;C </li>
+                    <li> First Record: 2nd millennium BC </li>
+                    <li> Recorded By: Egyptian astronomers </li>
+                </ul>
+
+                <video id = "video" controls>                                    <!-- "controls" add a control panel beneath your video e.g. play button, pause button, etc-->
+                    <source src = "videos/mars-video.mp4" type = "video/mp4">    <!-- add the vid from file location & indicate the video file type -->
+                </video>
+            </div>
+
+            <div id = "tabs-bottom">                    <!-- Home hyperlink is in the middle, and then the first one is the planet before the current page and the last is the planet after the current page -->
+                <a href = "earth.html"> Earth </a>      <!-- hyperlink to planet page before the current planet page. Cos Mercury is the 1st planet, it links to the sun, as there is no planet before mercury -->
+                <a href = "index.html"> Home </a>       <!-- Home hyperlink is always in the middle -->
+                <a href = "jupiter.html"> Jupiter </a>  <!-- hyperlink to planet (fursthest away from the sun) page after the current planet page -->    
+            </div>
+
+        </div>
+
+    </body>
+</html>

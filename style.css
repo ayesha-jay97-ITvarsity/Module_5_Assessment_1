@@ -1,0 +1,343 @@
+body {
+    width     : 100%;                        /* give app full width of the device's screen */
+    height    : 100%;                        /* give app full width of the device's screen */
+    background: url("images/space.png");
+    overflow  : hidden;                      /* this means that if there's any part of the backgr img that's larger than the screen (either wider/taller than the screen), then the part that's actually overlapping the screen will be hidden, so you won't have a vertical or horizontal scrollbar displayed on the bottom or right sides */
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size  : 40px;
+    text-shadow: 0 0 10px #000000;        /* shadow size and colour */
+    color      : white;
+}
+
+/*================ SUN ==================*/
+
+#sun {                                  /* img of sun with "sun" id */
+    position   : absolute;              /* allows us to place img at position anywhere we want on the screen based on provided screen coordinates, which follow below */
+    width      : 160px;
+    z-index    : 1000;                  /* sun is overlaid everything else on the screen, and any objects with a lower z-index will be layered beneath the sun img */
+    bottom     : 10px;                  /* padding at bottom of screen i.e. between sun and bottom of screen */
+    left       : 50%;                   /* works in conjunction with "margin-left" */
+    margin-left: -80px;                 /* "left" and "margin-left" lines of code (23 & 24) will centre the sun horzontally on the screen. Note that the width of the sun img was set to 160px, so after setting the img to start at 50% from the left, which is half the screen width, we then divide the img size itself and give the img a margin on minusing 80px (i.e. 160/2 = 80px, thus -80px) */
+}
+
+/*================ NEPTUNE ==================*/
+
+#neptune {                                                   /* img with "neptune" id */
+    width            : 66px;
+    height           : 66px;
+    margin           : 143px;
+    z-index          : 1000;
+    animation        : spin-right 8s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 8s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#neptune-orbit {                                        /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 1204px;
+    height           : 1204px;
+    bottom           : -512px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -602px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 14s linear infinite;   /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 14s linear infinite;   /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#neptune-label {                                    /* styling specifically for the neptune label on home page */
+    bottom: 692px;
+}
+
+/*================ URANUS ==================*/
+
+#uranus {                                                   /* img with "uranus" id */
+    width            : 66px;
+    height           : 66px;
+    margin           : 120px;
+    z-index          : 1000;
+    animation        : spin-right 8s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 8s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#uranus-orbit {                                         /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 1062px;                          /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 1062px;                          /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -441px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -531px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 15s linear infinite;   /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 15s linear infinite;   /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#uranus-label {                                    /* styling specifically for the neptune label on home page */
+    bottom: 620px;
+}
+
+/*================ SATURN ==================*/
+
+#saturn {                                                     /* img with "saturn" id */
+    width            : 110px;                                 /* saturn does not have square dimensions like prev planet images, so we remove the height element and simply do not rotate the planet on its own axis */
+    margin           : 85px;
+    z-index          : 1000;
+    animation        : spin-right 13s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 13s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#saturn-orbit {                                         /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 876px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 876px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -348px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -438px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 13s linear infinite;   /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 13s linear infinite;   /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#saturn-label {                                    /* styling specifically for the neptune label on home page */
+    bottom: 527px;
+}
+
+/*================ JUPITER ==================*/
+
+#jupiter {                                                    /* img with "jupiter" id */
+    width            : 100px;                                 
+    height           : 100px;                                 /* jupiter does not have a ring like saturn, thus planet img has square dimensions with the same height as the width */
+    margin           : 45px;
+    z-index          : 1000;
+    animation        : spin-right 10s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 10s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#jupiter-orbit {                                        /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 656px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 656px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -238px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -328px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 10s linear infinite;   /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 10s linear infinite;   /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#jupiter-label {                                    /* styling specifically for the neptune label on home page */
+    bottom: 417px;
+}
+
+/*================ MARS ==================*/
+
+#mars {                                                      /* img with "mars" id */
+    width            : 38px;                                 
+    height           : 38px;                                 /* jupiter does not have a ring like saturn, thus planet img has square dimensions with the same height as the width */
+    margin           : 55px;
+    z-index          : 1000;
+    animation        : spin-right 3s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 3s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#mars-orbit {                                           /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 508px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 508px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -164px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -254px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 4s linear infinite;    /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 4s linear infinite;    /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#mars-label {                                           /* styling specifically for the neptune label on home page */
+    bottom: 343px;
+}
+
+/*================ EARTH ==================*/
+
+#earth {                                                     /* img with "earth" id */
+    width            : 50px;                                 
+    height           : 50px;                                 /* jupiter does not have a ring like saturn, thus planet img has square dimensions with the same height as the width */
+    margin           : 36px;
+    z-index          : 1000;
+    animation        : spin-right 3s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 3s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#earth-orbit {                                          /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 410px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 410px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -115px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -205px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 5s linear infinite;    /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 5s linear infinite;    /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#earth-label {                                           /* styling specifically for the neptune label on home page */
+    bottom: 294px;
+}
+
+/*================ VENUS ==================*/
+
+#venus {                                                     /* img with "venus" id */
+    width            : 50px;                                 
+    height           : 50px;                                 /* jupiter does not have a ring like saturn, thus planet img has square dimensions with the same height as the width */
+    margin           : 16px;
+    z-index          : 1000;
+    animation        : spin-right 3s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 3s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+/* NOTE: venus & mercury had the lines "animation" and "-webkit-animaton" removed for some reason? (in video & given code) */
+
+#venus-orbit {                                          /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    width            : 300px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 300px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -60px;                          /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -150px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 4s linear infinite;    /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 4s linear infinite;    /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#venus-label {                                           /* styling specifically for the neptune label on home page */
+    bottom: 239px;
+}
+
+/*================ MERCURY ==================*/
+
+#mercury {                                                   /* img with "mercury" id */
+    width            : 40px;                                 
+    height           : 40px;                                 /* jupiter does not have a ring like saturn, thus planet img has square dimensions with the same height as the width */
+    margin           : 8px;
+    z-index          : 1000;
+    animation        : spin-right 3s linear infinite;        /* causes neptune to spin to the right and will orbit around the sun every 8 seconds, in a linear fashion i.e. only in one (linear direction) and not back and forth and infinitely */
+    -webkit-animation: spin-right 3s linear infinite;        /* NOTE: number of seconds in "animation" needs to match the number of seconds in "-webkit-animation". Also, if we reduce the number of seconds from 8 to 3s, then this means that the planet will rotate faster on its own axis */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+/* NOTE: venus & mercury had the lines "animation" and "-webkit-animaton" removed for some reason? (in video & given code) */
+
+#mercury-orbit {                                        /* styling the div with the id "neptune-orbit" so that the dooted white orbit half-circle is visible */
+    position         : absolute;
+    z-index          : 1;                               /* why was this z-index added? */
+    width            : 200px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    height           : 200px;                           /* we reduce the orbit size for the uranus because its closer to the sun, thus will have a smaller orbit */
+    bottom           : -10px;                           /* to set img below bottom of the page so that its showing a half circle and not the full complete orbit circle around the sun */
+    left             : 50%;
+    margin-left      : -100px;                          /* half of 1204px which is the width */
+    border           : 1px dotted white;
+    border-radius    : 50%;                             /* this makes our div (height + width = block) appr round rather than sqr. Read your notes on Module 5 for better understanding of values assigned to border-radius */
+    animation        : spin-left 2s linear infinite;    /* the planet will take 14s to rotate/orbit around the sun */
+    -webkit-animation: spin-left 2s linear infinite;    /* if we change "linear" for "alternate", it will cause the planet to complete its orbit in a clockwise direction, and once it reaches the starting pt, it will orbit around the sun in an alternate i.e. anticlockwise direction */
+}
+
+/* NOTE: "spin-right" and "spin-left" is not a real css function, so we will have to tell css exactly what spin-right and spin-left actually means and what we want the function to do. Otherwise, css will just ignore these lines */
+
+#mercury-label {                                         /* styling specifically for the neptune label on home page */
+    bottom: 189px;
+}
+
+/*================ PLEASE REMOVE  ==================*/
+
+/* remove/comment out after app modifications are complete */
+
+/*#container {                                            /* this is to make our content smaller so we can easily see it while adding other planets and their orbits, but we will remove/comment out this once we have added that content */
+/*    transform: scale(0.8, 0.8) translate(0, 700px);
+} */
+
+
+/*================ LABEL-BOX ==================*/
+
+.label-box {                                            /* refers to div that we wish to apply styling for all collective planets */
+    position   : absolute; 
+    width      : 150px;
+    left       : 50%;
+    margin-left: -75px; 
+    text-align : center;
+    color      : white;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+
+.label-box a {                                          /* to style the hyperlink inside the div with class label-box */
+    text-decoration: none;
+    padding        : 0;
+    margin         : 0;
+}
+
+.label-box a:visited {                                  /* ensures that once we click on a hyperlink, it doesn't change colour. So it won't be purple if visited, and will retain it's original specified styling */ 
+    color: white;                                     /* our hyperlink will remain white (and not purple) when visited */
+}
+
+/*================ ANIMATION ==================*/
+
+/* the code to create our spin-right and spin-left animation functions that we want to apply to our planet images */
+
+@keyframes spin-left {                                    /*  always start with "@keyframes" when working with animations. "@keyframe spin-left" means that we are now defining the spin-left animation and what exactly it will do */
+    100%{                                                 
+        transform        : rotate(-360deg);               /* if we change the rotation value from -360 to -180 degrees, it will only orbit around the sun halfway (180 degrees) around the sun before restarting */
+        -webkit-transform: rotate(-360deg);               /* this tells css that whenever we put in spin-left as an animation style, that over 100% of the rotation (after completing 100% of the rotation/orbit)it needs to rotate 360 degrees in a negative direction i.e. anti-clockwise */
+    }
+}
+
+/* NOTE: this spin-left rotation only shows the planet rotating around the sun, and not spinning on its own axis as it should */
+
+@keyframes spin-right {                                   /* this enables the planet to spin on its own axis while the code above (lines 95—100) enables the animation of rotating/orbiting around the sun */
+    100% {
+        transform        : rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
